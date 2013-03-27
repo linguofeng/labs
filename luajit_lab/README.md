@@ -3,13 +3,13 @@ luajit binding C & C++
 
 ## install luajit
 
-```shell
+```bash
 $ brew install luajit
 ```
 
 ## build binding C Test
 
-```shell
+```bash
 $ gcc-4.7 \
     -lluajit-5.1 \
     -I/usr/local/include/luajit-2.0 \
@@ -20,7 +20,7 @@ $ gcc-4.7 \
 
 ## build binding C++ Test
 
-```shell
+```bash
 $ luajit generate_ffi.lua
 $ g++-4.7 \
     -lluajit-5.1 \
