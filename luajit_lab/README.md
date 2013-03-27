@@ -15,6 +15,7 @@ $ gcc-4.7 \
     -I/usr/local/include/luajit-2.0 \
     -pagezero_size 10000 \
     -image_base 100000000 \
+    -o mainc \
     main.c
 ```
 
@@ -27,5 +28,6 @@ $ g++-4.7 \
     -I/usr/local/include/luajit-2.0 \
     -pagezero_size 10000 \
     -image_base 100000000 \
+    -o maincpp \
     main.cpp Student.cpp bindings.cpp
 ```
