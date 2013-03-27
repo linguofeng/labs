@@ -1,7 +1,5 @@
-luajit_lab
+luajit binding C & C++
 ===
-
-# luajit binding C & C++
 
 ## install luajit
 
@@ -30,4 +28,4 @@ $ g++-4.7 \
     -pagezero_size 10000 \
     -image_base 100000000 \
     main.cpp Student.cpp bindings.cpp
-```shell
+```
