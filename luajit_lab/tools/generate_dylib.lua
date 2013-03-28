@@ -1,23 +1,23 @@
 local files = ''
-local dfiles = ''
+local ofiles = ''
 
 for _, v in ipairs(arg) do
     files = files  .. ' src/' .. tostring(v) .. '.cpp'
-    dfiles = dfiles .. ' ' .. tostring(v) .. '.o'
+    ofiles = ofiles .. ' ' .. tostring(v) .. '.o'
+end
+
+if io.open('libs','r') == nil then
+    os.execute('mkdir libs')
+    print('mkdir libs')
 end
 
 local str1 = 'g++ -I include -c' .. files
 print(str1)
 
-if io.open(path or '','r') == nil then
-    os.execute('mkdir libs')
-    print('mkdir libs')
-end
-
-local str2 = 'g++ -dynamiclib -o libs/libstudent.dylib' .. dfiles
+local str2 = 'g++ -dynamiclib -o libs/libstudent.dylib' .. ofiles
 print(str2)
 
-local str3 = 'rm' .. dfiles
+local str3 = 'rm' .. ofiles
 print(str3)
 
 os.execute(str1)
