@@ -7,7 +7,7 @@ int main(void) {
     
     lua_State* L = luaL_newstate();   
     luaL_openlibs(L);
-    luaL_dofile(L, "hello2.lua");
+    luaL_dofile(L, "luascripts/testcpp2.lua");
     lua_close(L);
     
     return 0;

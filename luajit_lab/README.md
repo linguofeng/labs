@@ -10,24 +10,38 @@ $ brew install luajit
 ## build binding C Test
 
 ```bash
-$ gcc-4.7 \
+$ luajit tools/generate_ffi.lua header
+$ gcc \
     -lluajit-5.1 \
+    -I./include \
     -I/usr/local/include/luajit-2.0 \
     -pagezero_size 10000 \
     -image_base 100000000 \
     -o mainc \
-    main.c
+    src/main.c
 ```
 
 ## build binding C++ Test
 
 ```bash
-$ luajit generate_ffi.lua
-$ g++-4.7 \
+$ g++ \
     -lluajit-5.1 \
     -I/usr/local/include/luajit-2.0 \
     -pagezero_size 10000 \
     -image_base 100000000 \
     -o maincpp \
-    main.cpp Student.cpp bindings.cpp
+    main.cpp
+```
+
+```bash
+$ luajit tools/generate_ffi.lua bindings
+$ luajit tools/generate_dylib.lua student bindings
+$ g++ \
+    -pagezero_size 10000 \
+    -image_base 100000000 \
+    -l luajit-5.1 \
+    -I include
+    -I /usr/local/include/luajit-2.0 \
+    -o maincpp2 \
+    src/main2.cpp
 ```

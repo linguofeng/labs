@@ -1,4 +1,4 @@
-#include "Student.h"
+#include "student.h"
 #include <iostream>
 #include <string.h>
 

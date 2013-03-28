@@ -2,14 +2,19 @@ local log = function(...)
     print('[LuaJIT] -- ' .. string.format(...))
 end
 
+log('testcpp start----')
+
 local ffi = require 'ffi'
 local C = ffi.C
 
 ffi.cdef[[
     typedef struct Student Student;
+    Student* Student_new(void);
+    void Student_toString(Student*);
+    void Student_setName(Student*, const char*);
+    void Student_setAge(Student*, int);
+    void Student__gc(Student*);
 ]]
-
-ffi.cdef(io.open('bindings.ffi', 'r'):read('*a'))
 
 local Mt_Student = {} -- metatype
 Mt_Student.__index = Mt_Student
@@ -24,5 +29,4 @@ stu:setName("Tom")
 stu:setAge(23)
 stu:toString()
 
---student = ffi.cast('Student*', student)
---student:setAge(23)
+log('testcpp end----')
