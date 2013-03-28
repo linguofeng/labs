@@ -9,6 +9,11 @@ end
 local str1 = 'g++ -I include -c' .. files
 print(str1)
 
+if io.open(path or '','r') == nil then
+    os.execute('mkdir libs')
+    print('mkdir libs')
+end
+
 local str2 = 'g++ -dynamiclib -o libs/libstudent.dylib' .. dfiles
 print(str2)
 
