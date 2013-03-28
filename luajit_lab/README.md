@@ -1,36 +1,38 @@
 luajit binding C & C++
 ===
 
-## install luajit
+## luajit install
 
 ```bash
 $ brew install luajit
 ```
 
-## build binding C Test
+## luajit binding C Test
 
 ```bash
 $ luajit tools/generate_ffi.lua header
 $ gcc \
-    -lluajit-5.1 \
-    -I./include \
-    -I/usr/local/include/luajit-2.0 \
+    -l luajit-5.1 \
+    -I include \
+    -I /usr/local/include/luajit-2.0 \
     -pagezero_size 10000 \
     -image_base 100000000 \
     -o mainc \
     src/main.c
+$ ./mainc
 ```
 
-## build binding C++ Test
+## luajit C++ Test
 
 ```bash
 $ g++ \
-    -lluajit-5.1 \
-    -I/usr/local/include/luajit-2.0 \
+    -l luajit-5.1 \
+    -I /usr/local/include/luajit-2.0 \
     -pagezero_size 10000 \
     -image_base 100000000 \
     -o maincpp \
-    main.cpp
+    src/main.cpp
+$ ./maincpp
 ```
 
 ```bash
@@ -44,4 +46,5 @@ $ g++ \
     -I /usr/local/include/luajit-2.0 \
     -o maincpp2 \
     src/main2.cpp
+$ ./maincpp2
 ```
