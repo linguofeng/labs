@@ -48,3 +48,18 @@ $ g++ \
     src/main2.cpp
 $ ./maincpp2
 ```
+
+# luajit Callback
+
+## luajit callback Test
+
+```bash
+$ gcc \
+    -lluajit-5.1 \
+    -I/usr/local/include/luajit-2.0/ \
+    -pagezero_size 10000 \
+    -image_base 100000000 \
+    -o testcallback \
+    src/testcallback.c 
+$ ./testcallback
+```
