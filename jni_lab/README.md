@@ -5,6 +5,7 @@ jni test
 ### build
 
 ```bash
+$ mkdir bin
 $ find ./src -name '*.java' > sources_list.txt
 $ javac -d bin @sources_list.txt
 $ javah -classpath bin -d jni/include -jni com.linguofeng.jnitest.JNI
