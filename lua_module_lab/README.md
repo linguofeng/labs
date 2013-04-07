@@ -1,4 +1,4 @@
-Lua的模块测试
+Lua的module测试
 ---
 
 ```bash
@@ -28,3 +28,9 @@ ui.view2	table: 0x7f9ab3c098b0
 coroutine	table: 0x7f9ab3c05330
 test	table: 0x7f9ab3c0a330
 ```
+
+参考: [http://lua-users.org/wiki/LuaModuleFunctionCritiqued][1]
+      [http://lua-users.org/wiki/ModuleDefinition][2]
+
+[1]: http://lua-users.org/wiki/LuaModuleFunctionCritiqued "http://lua-users.org/wiki/LuaModuleFunctionCritiqued"
+[2]: http://lua-users.org/wiki/ModuleDefinition "http://lua-users.org/wiki/ModuleDefinition"
