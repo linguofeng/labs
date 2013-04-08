@@ -4,3 +4,4 @@
 *.dylib
 *.ffi
 *.class
+bin/
