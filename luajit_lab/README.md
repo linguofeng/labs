@@ -4,8 +4,25 @@ luajit binding C & C++
 ## luajit install
 
 ```bash
-$ brew install luajit
+$ brew install luajit cmake
 ```
+
+## generate ffi and so
+
+```bash
+$ ./build.sh
+```
+## build
+
+```
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make
+```
+
+
+old---------------------
 
 ## luajit binding C Test
 

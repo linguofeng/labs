@@ -1,5 +1,10 @@
 cmake_minimum_required(VERSION 2.8)
 
+# 执行命令
+#execute_process(COMMAND luajit ../tools/generate_ffi.lua bindings)
+#execute_process(COMMAND luajit ../tools/generate_ffi.lua header)
+#execute_process(COMMAND luajit ../tools/generate_dylib.lua student bindings)
+
 # 头文件搜索目录
 include_directories( include )
 include_directories( /usr/local/include/luajit-2.0 )
