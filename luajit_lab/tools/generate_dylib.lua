@@ -7,8 +7,9 @@ for _, v in ipairs(arg) do
 end
 
 if io.open('libs','r') == nil then
-    os.execute('mkdir libs')
-    print('mkdir libs')
+    local execute = 'mkdir libs'
+    os.execute(execute)
+    print(execute)
 end
 
 local str1 = 'g++ -I include -c' .. files

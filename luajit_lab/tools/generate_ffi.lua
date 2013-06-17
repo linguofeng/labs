@@ -6,6 +6,12 @@ local stub = io.open("stub.c", "w")
 stub:write("#include <" .. arg[1] .. ".h>")
 stub:close()
 
+if io.open('luascripts/ffi','r') == nil then
+    local execute = 'mkdir luascripts/ffi'
+    os.execute(execute)
+    print(execute)
+end
+
 local str2 = "gcc -I include -E -P stub.c > luascripts/ffi/" .. arg[1] .. ".ffi"
 print(str2)
 
