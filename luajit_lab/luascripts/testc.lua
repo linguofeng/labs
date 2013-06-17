@@ -19,7 +19,7 @@ local C = ffi.C
 
 -- 生成header.ffi
 -- $ luajit tools/generate_ffi header
-ffi.cdef(io.open('luascripts/ffi/header.ffi', 'r'):read('*a'))
+ffi.cdef(io.open('../luascripts/ffi/header.ffi', 'r'):read('*a'))
 
 -- 创建Student数据结构
 local stu = ffi.new('Student', {ffi.cast('char*', 'Tom'), 23})
