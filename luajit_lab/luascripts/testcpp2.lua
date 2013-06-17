@@ -5,13 +5,13 @@ end
 log('testcpp2 start----')
 
 local ffi = require 'ffi'
-local lib = ffi.load('libs/libstudent.dylib')
+local lib = ffi.load('../libs/libstudent.dylib')
 
 ffi.cdef[[
     typedef struct Student Student;
 ]]
 
-ffi.cdef(io.open('luascripts/ffi/bindings.ffi', 'r'):read('*a'))
+ffi.cdef(io.open('../luascripts/ffi/bindings.ffi', 'r'):read('*a'))
 
 local Mt_Student = {} -- metatype
 Mt_Student.__index = Mt_Student

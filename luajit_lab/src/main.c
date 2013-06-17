@@ -9,7 +9,7 @@ int main(void) {
     lua_State* L = luaL_newstate();   
     luaL_openlibs(L);
     /*luaL_dostring(L, "return 'Hello from Lua !'");  // 执行Lua语句的返回值*/
-    luaL_dofile(L, "luascripts/testc.lua");
+    luaL_dofile(L, "../luascripts/testc.lua");
     /*const char * str = lua_tostring(L, -1);         // 获取Lua语句的返回值*/
     /*printf(str);*/
     lua_close(L);

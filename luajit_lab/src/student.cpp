@@ -3,11 +3,11 @@
 #include <string.h>
 
 Student::Student(): name(NULL) {
-    
+    std::cout << "Student__new" << std::endl;
 }
 
 Student::~Student() {
-    
+    std::cout << "Student__gc" << std::endl;
 }
 
 void Student::toString() {
