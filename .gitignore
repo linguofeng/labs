@@ -5,3 +5,4 @@
 *.ffi
 *.class
 bin/
+*/build/
