@@ -47,5 +47,18 @@ int main() {
     print([&num](int n) { num += 10; return n + 100; }(num));
     print(num);
 
+    //auto func = []() { std::cout << "Hello Lambda" << std::endl; };
+    //func();
+
+    int num1 = 10;
+    auto func = [&num1]() { num1+= 100; std::cout << "num1:" << num1 << std::endl; };
+    std::cout << "num1:" << num1 << std::endl; // 输出10
+    func();                                  // 输出110
+    std::cout << "num1:" << num1 << std::endl; // 输出110，由于num是以引用的方式传入的，所以会修改
+    func();                                  // 输出110
+    func();                                  // 输出110
+    num1 += 99;
+    func();                                  // 输出110
+    func();                                  // 输出110
     return 0;
 }
